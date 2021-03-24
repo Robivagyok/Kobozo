@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title>Farönk térfogat számító</title>
+    <title>Farönk térfogat számító </title>
 </head>
 <body>
     <section>
@@ -15,19 +15,17 @@
              <h2>Farönk térfogat számító</h2>
               <select name="" id="muvelet">
                   <option value="Huber">Huber</option>
-                  <option value="Schribner">Schribner</option>
-                  <option value="Doyle">Doyle</option>
               </select>
-              <div class="div1 div"> 
+              <div> 
                   <h2>Térfogat (kéregmentes)</h2><br>
                   <b id="terfogat">---</b>
                   <span>m<sup>3</sup></span> 
               </div>
-              <div class="div2 div">
+              <div>
                    <h2> Középső átmérő</h2>    
                    <input type="number" min="0" id="atmero" placeholder="cm">
               </div>
-              <div class="div3 div">
+              <div>
                   <h2>Hosszúság</h2> 
                   <input type="number" min="0" id="hosz" placeholder="m">
                    <h2>Mennyiség (db)</h2> 
@@ -51,9 +49,7 @@
     
     
       function faTerfogat(){
-         let elso= ((Math.pow((((atmero.value/100)+hosz.value)*1.5),2))*Math.PI)/4 ;
-         let masodik=((Math.pow(atmero.value/100,2))*Math.PI)/4; 
-         let osszeg=Math.round(((elso+masodik)/2)*hosz.value);
+         let osszeg = ((Math.ceil(Math.pow(atmero.value,2)*Math.PI*hosz.value)/80000)*menyiseg.value);
          terfogat.innerHTML=osszeg;
        };
        szamol.addEventListener("click", faTerfogat);
